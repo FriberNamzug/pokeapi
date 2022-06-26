@@ -6,3 +6,8 @@ export const get = async () => {
     const data = await axios.get(url)
     return data.data
 }
+
+export const getData = async (id: number) => {
+    const data = await axios.get(`${url}/${id}`)
+    return data
+}
