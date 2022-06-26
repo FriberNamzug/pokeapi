@@ -95,6 +95,46 @@ export const App = () => {
           </div>
         </div>
       }
+
+      {flag &&
+
+        <div className="flex justify-center m-8">
+          <div className="flex flex-col items-center pb-10 w-96 bg-white rounded-lg border border-gray-200 shadow-md">
+                <img className='w-10 cursor-pointer' src={close} alt="close" onClick={() => { setFlag(false) }} />
+
+
+                <h1 className="text-3xl text-center">Pokemon</h1>
+                <p className="text-center font-bold">{pokemon.name}</p>
+                <img src={pokemon.sprites} alt="pokemon" />
+              <div>
+                <p className='font-bold'>Exp: {pokemon.expe}</p>
+                <p className='font-bold'>Habilidades:</p>
+
+                  <ul className='text-center'>
+                    {pokemon.abilities.map((ability, index) => {
+                      return (
+                        <li key={index}>
+                          <p className='border-b border-blue-400'>{ability.ability.name}</p>
+                        </li>
+                      )
+                    })}
+                  </ul>
+                </div>
+
+          </div>
+        </div>
+
+      }
+
+
+
+
+
+
+
+
+
+
     </div>
   );
 }
